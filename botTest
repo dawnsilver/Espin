@@ -1,0 +1,14 @@
+var Bot = require('discord-bot-maker');
+
+var bot = new Bot({
+	email: <email>,
+	password: <pass>
+});
+
+bot.connect(function() {
+	bot
+		.on(bot.triggers.command, 'hello')
+		.do(function(bot, conf, args) {
+			this.reply('world');
+		});
+});
